@@ -1,0 +1,343 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{88008AD8-650A-442E-8C47-A615CB37B29C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SCC.Couries.RedPack</RootNamespace>
+    <AssemblyName>SCC.Couries.RedPack</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\Servicios\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Service References\Servicios\RedpackWS.wsdl" />
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.actualizacionSituacionesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.altaDireccionGuiaWebResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.aseguraEnvioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.bajarGuiasGtxResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.buscaCircuitoExistenteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.buscaCircuitoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.buscaConductorNombreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.buscaConductorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.buscaRutaDistribucionOrigenDestinoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.buscaRutaDistribucionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.buscaSucursalCPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.buscaSucursalLatitudLongitudResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.buscaUnidadNombreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.buscaUnidadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.busquedaCodigoPostalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.calculaCostoSeguroResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.cargaDistribucionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.catalogoDireccionesGuiaWebResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.catalogoTiposAtencionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.centrosDistribucionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.cierraGtxResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.cierreGtxRecepcionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.circuitoAgregaEmbarqueRecepcionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.clienteFacturacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.coberturaNacionalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.conductorCircuitoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.consultaDepositosBancariosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.cotizacionInternacionalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.cotizacionLTLResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.cotizacionNacionalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.descargaFacturaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.direccionesRecoleccionCFResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.direccionesRecoleccionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.direccionRecoleccionClvResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.documentacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.EnviaCorreoNotificacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.envioSinDatosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.generaGuiaElectronicaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.generaGuiaElectronicaTransaccionalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.generaMovimientoCircuitoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.guardaCircuitoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.Guia.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.historialCargoCombustibleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.matrizDistribucionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.obtenerFormatoDeImpresionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.obtenerPruebaDeEntregaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.obtieneCatalogoClavesDEXResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.obtieneCatalogoDestinosInternacionalesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.obtieneCatalogoDestinosLTLResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.obtieneCatalogoEstadosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.obtieneCatalogoIataInternacionalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.obtieneCatalogoPoblacionPorEstadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.obtieneCatalogoSituacionesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.obtieneCatalogoSucursalesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.obtieneCatalogoTipoEntregaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.obtieneCatalogoTipoEnvioCorreoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.obtieneCatalogoTipoEnvioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.obtieneCatalogoTipoGtxResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.obtieneCatalogoTipoServicioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.obtieneCatalogoTiposIdentificacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.obtieneDetalleGtxResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.obtieneFechaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.obtieneGuiasClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.obtieneSucursalesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.obtieneValoresSeguroResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.pesoCircuitoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.pesoGTXResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.predocumentacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.pruebaEntregaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.rastreoAvanzadoFrontResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.rastreoAvanzadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.rastreoInternacionalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.rastreoPorReferenciaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.rastreoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.recuperaPasswordRBResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.registraComentarioContactoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.reporteEnImpresoraDefinidaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.solicitaCompulsaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.solicitaGtxResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.solicitudRecoleccionCFResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.solicitudRecoleccionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.solicitudRecoleccionWebResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.subirGuiasGtxResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.sucursalesDistribucionCircuitoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.tarifasValoresDiariosInterResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.validaUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Servicios\SCC.Couries.RedPack.Servicios.verificacionCircuitosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\Servicios\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Servicios\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Servicios\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Servicios\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

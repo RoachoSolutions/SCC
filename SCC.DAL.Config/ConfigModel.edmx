@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SCCConfigModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="clientes">
+          <Key>
+            <PropertyRef Name="idcliente" />
+          </Key>
+          <Property Name="idcliente" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="secretkey" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="apikey" Type="varchar" MaxLength="15" />
+          <Property Name="estado" Type="int" Nullable="false" />
+          <Property Name="fechareg" Type="datetime" Nullable="false" />
+          <Property Name="fechamod" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="couries">
+          <Key>
+            <PropertyRef Name="idcouries" />
+          </Key>
+          <Property Name="idcouries" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="100" />
+          <Property Name="estado" Type="int" Nullable="false" />
+          <Property Name="fechareg" Type="datetime" Nullable="false" />
+          <Property Name="fechamod" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="couriesconfig">
+          <Key>
+            <PropertyRef Name="idconfig" />
+          </Key>
+          <Property Name="idconfig" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idcouries" Type="int" Nullable="false" />
+          <Property Name="clave" Type="varchar" MaxLength="50" />
+          <Property Name="valor" Type="varchar" MaxLength="2000" />
+          <Property Name="estado" Type="int" Nullable="false" />
+          <Property Name="fechareg" Type="datetime" Nullable="false" />
+          <Property Name="fechamod" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__couriesco__idcou__3F466844">
+          <End Role="couries" Type="Self.couries" Multiplicity="1" />
+          <End Role="couriesconfig" Type="Self.couriesconfig" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="couries">
+              <PropertyRef Name="idcouries" />
+            </Principal>
+            <Dependent Role="couriesconfig">
+              <PropertyRef Name="idcouries" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SCCConfigModelStoreContainer">
+          <EntitySet Name="clientes" EntityType="Self.clientes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="couries" EntityType="Self.couries" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="couriesconfig" EntityType="Self.couriesconfig" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__couriesco__idcou__3F466844" Association="Self.FK__couriesco__idcou__3F466844">
+            <End Role="couries" EntitySet="couries" />
+            <End Role="couriesconfig" EntitySet="couriesconfig" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SCCConfigModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="clientes">
+          <Key>
+            <PropertyRef Name="idcliente" />
+          </Key>
+          <Property Name="idcliente" Type="Guid" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="secretkey" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apikey" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Int32" Nullable="false" />
+          <Property Name="fechareg" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="fechamod" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="couries">
+          <Key>
+            <PropertyRef Name="idcouries" />
+          </Key>
+          <Property Name="idcouries" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Int32" Nullable="false" />
+          <Property Name="fechareg" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="fechamod" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="couriesconfig" Relationship="Self.FK__couriesco__idcou__3F466844" FromRole="couries" ToRole="couriesconfig" />
+        </EntityType>
+        <EntityType Name="couriesconfig">
+          <Key>
+            <PropertyRef Name="idconfig" />
+          </Key>
+          <Property Name="idconfig" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idcouries" Type="Int32" Nullable="false" />
+          <Property Name="clave" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="valor" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Int32" Nullable="false" />
+          <Property Name="fechareg" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="fechamod" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="couries" Relationship="Self.FK__couriesco__idcou__3F466844" FromRole="couriesconfig" ToRole="couries" />
+        </EntityType>
+        <Association Name="FK__couriesco__idcou__3F466844">
+          <End Role="couries" Type="Self.couries" Multiplicity="1" />
+          <End Role="couriesconfig" Type="Self.couriesconfig" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="couries">
+              <PropertyRef Name="idcouries" />
+            </Principal>
+            <Dependent Role="couriesconfig">
+              <PropertyRef Name="idcouries" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SCC_ConfigEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="clientes" EntityType="Self.clientes" />
+          <EntitySet Name="couries" EntityType="Self.couries" />
+          <EntitySet Name="couriesconfig" EntityType="Self.couriesconfig" />
+          <AssociationSet Name="FK__couriesco__idcou__3F466844" Association="Self.FK__couriesco__idcou__3F466844">
+            <End Role="couries" EntitySet="couries" />
+            <End Role="couriesconfig" EntitySet="couriesconfig" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SCCConfigModelStoreContainer" CdmEntityContainer="SCC_ConfigEntities">
+          <EntitySetMapping Name="clientes">
+            <EntityTypeMapping TypeName="SCCConfigModel.clientes">
+              <MappingFragment StoreEntitySet="clientes">
+                <ScalarProperty Name="idcliente" ColumnName="idcliente" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="secretkey" ColumnName="secretkey" />
+                <ScalarProperty Name="apikey" ColumnName="apikey" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="fechareg" ColumnName="fechareg" />
+                <ScalarProperty Name="fechamod" ColumnName="fechamod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="couries">
+            <EntityTypeMapping TypeName="SCCConfigModel.couries">
+              <MappingFragment StoreEntitySet="couries">
+                <ScalarProperty Name="idcouries" ColumnName="idcouries" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="fechareg" ColumnName="fechareg" />
+                <ScalarProperty Name="fechamod" ColumnName="fechamod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="couriesconfig">
+            <EntityTypeMapping TypeName="SCCConfigModel.couriesconfig">
+              <MappingFragment StoreEntitySet="couriesconfig">
+                <ScalarProperty Name="idconfig" ColumnName="idconfig" />
+                <ScalarProperty Name="idcouries" ColumnName="idcouries" />
+                <ScalarProperty Name="clave" ColumnName="clave" />
+                <ScalarProperty Name="valor" ColumnName="valor" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="fechareg" ColumnName="fechareg" />
+                <ScalarProperty Name="fechamod" ColumnName="fechamod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
