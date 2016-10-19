@@ -344,6 +344,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SCC.Comun.Clases\SCC.Comun.Clases.csproj">
+      <Project>{c6aafaf7-d593-4618-806a-bb8c51d7d9d7}</Project>
+      <Name>SCC.Comun.Clases</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SCC.Comun.Contantes\SCC.Comun.Contantes.csproj">
       <Project>{44d8a3cc-3fa1-49e7-b588-3e7f58d54549}</Project>
       <Name>SCC.Comun.Contantes</Name>
